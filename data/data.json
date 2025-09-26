@@ -1,0 +1,32 @@
+[{
+  "name" : "Skogsta",
+  "price": "499,9",
+  "material": "Acacia",
+  "length": "235",
+  "width": "100",
+  "Height": "74"
+},
+{
+  "name" : "Stockholm",
+  "price": "599",
+  "material": "Oak",
+  "length": "230",
+  "width": "90",
+  "Height": "75"
+},
+{
+  "name" : "Alhult",
+  "price": "219",
+  "material": "Ash",
+  "length": "170",
+  "width": "80",
+  "Height": "75"
+},{
+  "name" : "Tarsele",
+  "price": "499",
+  "material": "Oak",
+  "length": "150",
+  "width": "80",
+  "Height": "77"
+}
+]

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+    <meta charset="UTF-8">
+    <link href="../style/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!--    <script src="../data/data.json"></script>-->
+    <title>Table Shop</title>
+</head>
+<body class="bg-blue-700">
+    <header class="w-full h-30 sticky z-50 left-0 top-0">
+        <div id="header" class="mx-auto flex flex-row items-center justify-content-center bg-stone-900 @md:flex-col @sm:flex-col w-full h-7/10 ">
+            <h1 class=" font-sans italic text-shadow-lg/50 shadow-zinc-950 flex justify-center-safe font-bold underline bg-stone-900 text-white w-full">Welcome to TableShop!</h1>
+        </div>
+        <nav id="navbar" class="flex flex-row justify-around align-items-center @md:flex-col @sm:flex-col bg-green-500 w-full h-3/10">
+            <a href="./index.html" class="grid place-content-center w-5/20">Home</a>
+            <a href="shop.html" class="grid place-content-center w-5/20">Shop</a>
+            <a href="contact.html" class="grid place-content-center w-5/20">Contact</a>
+            <a href="about.html" class="grid place-content-center w-5/20">About us</a>
+        </nav>
+    </header>
+    <div id="productlist" class="flex flex-row flex-wrap justify-between bg-blue relative @sm:flex-col @md:flex-col w-full h-6/10 p-5">
+        <div class="block rounded-lg w-3/10 h-6/10 bg-black border border-black shadow-secondary-1 dark:bg-surface-dark mb-4">
+            <img class="rounded-t-lg object-fill w-150 h-100" src="../img/alhult.jpg" alt="" />
+            <div class="p-6 text-surface text-white">
+                <h5 class="mb-2 text-xl font-medium leading-tight">Alhult</h5>
+                <p class="mb-4 text-base">
+                    Sturdy and good looking. This table is pefect for a minimalistic livingroom. It will hold in the long term and is one of the best investment you could do in your life.
+                </p>
+                <button type="button" class="inline-block rounded bg-blue-700 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-ripple-init data-twe-ripple-color="black">
+                    Button
+                </button>
+            </div>
+        </div>
+        <div class="block rounded-lg w-3/10 h-6/10 bg-black border border-black shadow-secondary-1 dark:bg-surface-dark">
+        <img class="rounded-t-lg object-fill w-150 h-100" src="../img/skogsta.jpg" alt="" />
+        <div class="p-6 text-surface text-white">
+            <h5 class="mb-2 text-xl font-medium leading-tight">Skogsta</h5>
+            <p class="mb-4 text-base">
+                Designed by the most known designers of the world (who will remain anonymous), this fancy table is one the finest piece of furniture you could find. When modern art and decoration meet, Skogsta is here.
+            </p>
+            <button type="button" class="inline-block rounded bg-blue-700 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-ripple-init data-twe-ripple-color="black">
+                Button
+            </button>
+        </div>
+    </div>
+        <div class="block rounded-lg w-3/10 h-6/10 bg-black border border-black shadow-secondary-1 dark:bg-surface-dark">
+            <img class="rounded-t-lg object-fill w-150 h-100" src="../img/stockholm.jpg" alt="" />
+            <div class="p-6 text-surface text-white">
+                <h5 class="mb-2 text-xl font-medium leading-tight">Stockholm</h5>
+                <p class="mb-4 text-base">
+                    Basic but efficient, Stockholm will fulfill your needs for a family table. Its rounded extremities is perfect for family reunion as no one will be excluded.
+                </p>
+                <button type="button" class="inline-block rounded bg-blue-700 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-ripple-init data-twe-ripple-color="black">
+                    Button
+                </button>
+            </div>
+        </div>
+        <div class="block rounded-lg w-3/10 h-6/10 bg-black border border-black shadow-secondary-1 dark:bg-surface-dark">
+            <img class="rounded-t-lg object-fill w-150 h-100" src="../img/tarsele.jpg" alt="" />
+            <div class="p-6 text-surface text-white">
+                <h5 class="mb-2 text-xl font-medium leading-tight">Tarsele</h5>
+                <p class="mb-4 text-base">
+                    Not for the faint of heart, Tarsele approached the table design with a brutal aspect. The contrast between its wooden top and steel foot brings together nature and metal, perfect representation of the duality of men.
+                </p>
+                <button type="button" class="inline-block rounded bg-blue-700 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-ripple-init data-twe-ripple-color="black">
+                    Button
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer class="flex bottom-0 top-100 justify-around mb-2">
+        <address class="flex flex-col items-center justify-center w-5/20">
+            <span class="font-bold underline">Contact</span>
+            <a href="mailto:cyprien.delmas@epitech.eu">cyprien.delmas@epitech.eu</a>
+            <a href="tel:+33637333587">+33 6 37 33 35 87</a>
+        </address>
+        <address class="flex flex-col items-center justify-center w-5/20">
+            <span class="font-bold underline">Contact</span>
+            <a href="mailto:cyprien.delmas@epitech.eu">cyprien.delmas@epitech.eu</a>
+            <a href="tel:+33637333587">+33 6 37 33 35 87</a>
+        </address>
+    </footer>
+</body>
