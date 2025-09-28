@@ -3,12 +3,12 @@
 <head>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
     <meta charset="UTF-8">
-    <link href="../style/style.css" rel="stylesheet">
+    <link href="./style/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <title>Table Shop</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="flex flex-col w-full min-h-screen bg-[url('../img/bg.jpg')] bg-white/20 bg-cover bg-center bg-no-repeat max-sm:overflow-x-hidden">
+<body class="flex flex-col w-full min-h-screen bg-[url('./img/bg.jpg')] bg-white/20 bg-cover bg-center bg-no-repeat max-sm:overflow-x-hidden">
     <header id="main-header" class="w-full sticky z-50 left-0 top-0 bg-stone-900/80 backdrop-blur-md transition duration-300 ease-in-out shadow-md">
 
         <!-- Header principal -->
@@ -16,7 +16,7 @@
 
             <!-- Titre -->
             <a href="./index.html" class="flex items-center h-full">
-                <img src="../img/logo.png" alt="TableShop Logo" class="h-28 sm:h-32 drop-shadow-lg">
+                <img src="./img/logo.png" alt="TableShop Logo" class="h-28 sm:h-32 drop-shadow-lg">
             </a>
 
             <!-- Bouton menu mobile (non modifié) -->
@@ -56,7 +56,7 @@
             </nav>
         </div>
     </header>
-<video class="h-full w-full bg-white/30 relative z-0 py-5 px-5" src="../img/video.mp4" muted loop autoPlay></video>
+<video class="h-full w-full bg-white/30 relative z-0 py-5 px-5" src="./img/video.mp4" muted loop autoPlay></video>
     <section class="w-full h-full flex bg-white/30 justify-center py-8 px-8">
         <div class="bg-stone-800/90 shadow-lg rounded-lg p-6 flex flex-col md:flex-row items-center w-full max-w-5xl">
 
@@ -71,7 +71,7 @@
             <!-- Diaporama -->
             <div class="w-full md:w-1/2">
                 <div class="flex flex-row relative overflow-hidden rounded-lg h-80 md:h-96">
-                    <img id="carousel-image" src="../img/tarsele-transparent.png" alt="Table preview" class="w-full h-auto transition duration-300">
+                    <img id="carousel-image" src="./img/tarsele-transparent.png" alt="Table preview" class="w-full h-auto transition duration-300">
                 </div>
             </div>
 
@@ -156,10 +156,10 @@
             mobileMenu.classList.add("hidden");
         });
         const images = [
-            '../img/alhult-transparent.png',
-            '../img/skogsta-transparent.png',
-            '../img/stockholm-transparent.png',
-            '../img/tarsele-transparent.png'
+            './img/alhult-transparent.png',
+            './img/skogsta-transparent.png',
+            './img/stockholm-transparent.png',
+            './img/tarsele-transparent.png'
         ];
 
         let current = 0;

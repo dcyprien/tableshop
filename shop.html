@@ -3,12 +3,12 @@
 <head>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
     <meta charset="UTF-8">
-    <link href="../style/style.css" rel="stylesheet">
+    <link href="./style/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <title>Table Shop</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="flex flex-col w-full min-h-screen bg-[url('../img/bg.jpg')] bg-cover bg-center bg-no-repeat max-sm:overflow-x-hidden">
+<body class="flex flex-col w-full min-h-screen bg-[url('./img/bg.jpg')] bg-cover bg-center bg-no-repeat max-sm:overflow-x-hidden">
     <header id="main-header" class="w-full sticky z-50 left-0 top-0 bg-stone-900/80 backdrop-blur-md transition duration-300 ease-in-out shadow-md">
 
         <!-- Header principal -->
@@ -16,7 +16,7 @@
 
             <!-- Titre -->
             <a href="./index.html" class="flex items-center h-full">
-                <img src="../img/logo.png" alt="TableShop Logo" class="h-28 sm:h-32 drop-shadow-lg">
+                <img src="./img/logo.png" alt="TableShop Logo" class="h-28 sm:h-32 drop-shadow-lg">
             </a>
 
             <!-- Bouton menu mobile (non modifié) -->
@@ -58,7 +58,7 @@
     </header>
     <div id="productlist" class="flex flex-row flex-wrap justify-between bg-white/30 relative @sm:flex-col @md:flex-col w-full h-6/10 p-5">
         <div class="block rounded-lg w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative">
-            <img id="alhult-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="../img/alhult.jpg" alt="" />
+            <img id="alhult-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="./img/alhult.jpg" alt="" />
             <div class="p-6 text-surface text-white">
                 <h5 class="mb-2 text-xl font-medium leading-tight">Alhult</h5>
                 <p class="mb-4 hidden lg:block">
@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="block rounded-lg w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative">
-            <img id="skogsta-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="../img/skogsta.jpg" alt="" />
+            <img id="skogsta-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="./img/skogsta.jpg" alt="" />
             <div class="p-6 text-surface text-white">
                 <h5 class="mb-2 text-xl font-medium leading-tight">Skogsta</h5>
                 <p class="mb-4 hidden lg:block">
@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="block rounded-lg w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative">
-            <img id="stockholm-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="../img/stockholm.jpg" alt="" />
+            <img id="stockholm-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="./img/stockholm.jpg" alt="" />
             <div class="p-6 text-surface text-white">
                 <h5 class="mb-2 text-xl font-medium leading-tight">Stockholm</h5>
                 <p class="mb-4 hidden lg:block">
@@ -113,7 +113,7 @@
             </div>
         </div>
         <div class="block rounded-lg w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative">
-            <img id="tarsele-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="../img/tarsele.jpg" alt="" />
+            <img id="tarsele-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="./img/tarsele.jpg" alt="" />
             <div class="p-6 text-surface text-white">
                 <h5 class="mb-2 text-xl font-medium leading-tight">Tarsele</h5>
                 <p class="mb-4 hidden lg:block">
@@ -298,7 +298,7 @@
         // Exemple de données produit (tu peux les compléter ou les générer dynamiquement)
         const products = {
             'Alhult': {
-                img: '../img/alhult-full.jpg',
+                img: './img/alhult-full.jpg',
                 name: 'Alhult',
                 description: 'Sturdy and good looking. This table is pefect for a minimalistic livingroom. It will hold in the long term and is one of the best investment you could do in your life.',
                 price: '219€',
@@ -308,7 +308,7 @@
                 height: '75'
             },
             'Skogsta': {
-                img: '../img/skogsta-full.jpg',
+                img: './img/skogsta-full.jpg',
                 name: 'Skogsta',
                 description: 'Designed by the most known designers of the world (who will remain anonymous), this fancy table is one the finest piece of furniture you could find. When modern art and decoration meet, Skogsta is here.',
                 price: '499,99€',
@@ -318,7 +318,7 @@
                 height: '74'
             },
             'Stockholm': {
-                img: '../img/stockholm-full.jpg',
+                img: './img/stockholm-full.jpg',
                 name: 'Stockholm',
                 description: 'Basic but efficient, Stockholm will fulfill your needs for a family table. Its rounded extremities is perfect for family reunion as no one will be excluded.',
                 price: '599€',
@@ -328,7 +328,7 @@
                 height: '75'
             },
             'Tarsele': {
-                img: '../img/tarsele-full.jpg',
+                img: './img/tarsele-full.jpg',
                 name: 'Tarsele',
                 description: 'Not for the faint of heart, Tarsele approaches the table design with a brutal aspect. The contrast between its wooden top and steel foot brings together nature and metal, perfect representation of the duality of men.',
                 price: '499€',
