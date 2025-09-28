@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="overflow-x-hidden">
+<html lang="en" class="overflow-x-hidden"><!-- Prevent horizontal overflow on the page -->
 <head>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
     <meta charset="UTF-8">
@@ -8,141 +8,123 @@
     <title>Table Shop</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="flex flex-col w-full min-h-screen bg-[url('./img/bg.jpg')] bg-cover bg-center bg-no-repeat max-sm:overflow-x-hidden">
-    <header id="main-header" class="w-full sticky z-50 left-0 top-0 bg-stone-900/80 backdrop-blur-md transition duration-300 ease-in-out shadow-md">
+<body class="flex flex-col w-full min-h-screen bg-[url('./img/bg.jpg')] bg-cover bg-center bg-no-repeat max-sm:overflow-x-hidden"><!-- Main body: flex column layout, full width, minimum screen height, background image, cover & center, hide horizontal overflow on small screens -->
 
-        <!-- Header principal -->
-        <div class="mx-auto flex justify-center  w-full max-w-7xl">
+    <!-- Header Section -->
+    <header id="main-header" class="w-full sticky z-50 left-0 top-0 bg-stone-900/80 backdrop-blur-md transition duration-300 ease-in-out shadow-md"><!-- Full width, sticky top, z-index 50, semi-transparent dark background, blur effect, smooth transition, shadow -->
 
-            <!-- Titre -->
-            <a href="./index.html" class="flex items-center h-full">
-                <img src="./img/logo.png" alt="TableShop Logo" class="h-28 sm:h-32 drop-shadow-lg">
+        <div class="mx-auto flex justify-center w-full max-w-7xl"><!-- Container centered horizontally, flex layout, justify content center, full width up to max width -->
+
+            <!-- Logo -->
+            <a href="./index.html" class="flex items-center h-full"><!-- Flex container for logo, vertical center -->
+                <img src="./img/logo.png" alt="TableShop Logo" class="h-28 sm:h-32 drop-shadow-lg"><!-- Logo height 28 on small, 32 on sm and above, drop shadow -->
             </a>
 
-            <!-- Bouton menu mobile (non modifié) -->
-            <button id="menu-toggle" class="md:hidden text-white focus:outline-none ml-4">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg">
+            <!-- Mobile menu button -->
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none ml-4"><!-- Hidden on md+ screens, white text, remove outline on focus, margin-left 4 -->
+                <svg class="w-6 h-6" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
 
-        <!-- Navbar desktop -->
-        <nav id="navbar" class="hidden md:flex justify-center space-x-8 bg-stone-800/100 text-white py-3 w-full shadow-inner">
-            <a href="./index.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">Home</a>
+        <!-- Desktop Navbar -->
+        <nav id="navbar" class="hidden md:flex justify-center space-x-8 bg-stone-800/100 text-white py-3 w-full shadow-inner"><!-- Hidden on mobile, flex on md+, center items, horizontal space 8 between links, solid dark background, white text, vertical padding 3, full width, inner shadow -->
+            <a href="./index.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">Home</a><!-- Padding x4 y2, rounded corners, hover color change with smooth transition -->
             <a href="./shop.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">Shop</a>
             <a href="./contact.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">Contact</a>
             <a href="./about.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">About us</a>
         </nav>
 
-        <!-- Menu mobile (inchangé) -->
-        <div id="mobile-menu" class="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-green-600/95 backdrop-blur-sm text-white transform translate-x-full transition-transform duration-300 ease-in-out hidden z-50 shadow-2xl border-l border-green-700">
-            <div class="flex justify-between items-center px-4 py-4 border-b border-green-700">
-                <span class="font-bold text-lg">Menu</span>
-                <button id="menu-close" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <!-- Mobile Navbar -->
+        <div id="mobile-menu" class="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-green-600/95 backdrop-blur-sm text-white transform translate-x-full transition-transform duration-300 ease-in-out hidden z-50 shadow-2xl border-l border-green-700"><!-- Fixed position, full height, 80% width max xs, semi-transparent green with blur, white text, offscreen initially with translate-x-full, smooth transform transition, hidden by default, z-index 50, heavy shadow, left border -->
+
+            <div class="flex justify-between items-center px-4 py-4 border-b border-green-700"><!-- Flex row, space between, vertical center, padding x4 y4, bottom border -->
+                <span class="font-bold text-lg">Menu</span><!-- Bold large text -->
+                <button id="menu-close" class="text-white focus:outline-none"><!-- White text, remove outline on focus -->
+                    <svg class="w-6 h-6" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
 
-            <nav class="flex flex-col px-4 py-4 space-y-2 text-base font-semibold text-white">
-                <a href="./index.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">Home</a>
+            <nav class="flex flex-col px-4 py-4 space-y-2 text-base font-semibold text-white"><!-- Flex column layout, padding, vertical spacing between links, base text size, semi-bold, white text -->
+                <a href="./index.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">Home</a><!-- Padding, rounded medium corners, solid green background, hover darker green, smooth color transition, border -->
                 <a href="./shop.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">Shop</a>
                 <a href="./contact.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">Contact</a>
                 <a href="./about.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">About us</a>
             </nav>
         </div>
     </header>
-    <div id="productlist" class="flex flex-col flex-wrap justify-center items-center bg-white/30 relative sm:justify-between sm:flex-row w-full h-6/10 p-5">
-        <div class="block rounded-lg w-full sm:w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative">
-            <img id="alhult-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="./img/alhult.jpg" alt="" />
-            <div class="p-6 text-surface text-white">
-                <h5 class="mb-2 text-xl font-medium leading-tight">Alhult</h5>
-                <p class="mb-4 hidden lg:block">
-                    Sturdy and good looking. This table is pefect for a minimalistic livingroom. It will hold in the long term and is one of the best investment you could do in your life.
-                </p>
-                <p class="mb-4 hidden sm:block lg:hidden">
-                    Sturdy and good looking. This table is pefect...
-                </p>
 
-                <p class="mb-4 block sm:hidden">
-                    Sturdy and good looking. This table is pefect...
-                </p>
+    <!-- Product list -->
+    <div id="productlist" class="flex flex-col flex-wrap justify-center items-center bg-white/30 relative sm:justify-between sm:flex-row w-full h-6/10 p-5"><!-- Flex column on mobile with wrap, center horizontally and vertically, semi-transparent white bg, relative positioning, on sm+ justify-between and row layout, full width, height 60% of container, padding 5 -->
+
+    <!-- Product Card 1 -->
+        <div class="block rounded-lg w-full sm:w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative"><!-- Block display, rounded large corners, full width mobile, 30% width sm+, height 60%, dark semi-transparent bg, border black, shadow, dark mode bg, bottom margin 4, hide overflow, relative positioning -->
+            <img id="alhult-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="./img/alhult.jpg" alt="" /><!-- Full width, auto height, max height 64, cover object-fit, rounded top corners, smooth transform on hover scaling 105% -->
+            <div class="p-6 text-surface text-white"><!-- Padding 6, white text -->
+                <h5 class="mb-2 text-xl font-medium leading-tight">Alhult</h5><!-- Margin-bottom 2, extra-large text, medium font weight, tight line height -->
+                <p class="mb-4 hidden lg:block">Sturdy and good looking. This table is pefect for a minimalistic livingroom. It will hold in the long term and is one of the best investment you could do in your life.</p><!-- Hidden by default, visible on lg+ -->
+                <p class="mb-4 hidden sm:block lg:hidden">Sturdy and good looking. This table is pefect...</p><!-- Hidden by default, visible sm+, hidden lg+ -->
+                <p class="mb-4 block sm:hidden">Sturdy and good looking. This table is pefect...</p><!-- Block by default, hidden sm+ -->
+                <button type="button" class="inline-block rounded bg-green-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-ripple-init data-twe-ripple-color="black">More info...</button><!-- Inline block, rounded corners, green bg, padding x6, pt 2.5 pb2, xs text, medium font, uppercase, normal line height, white text, shadow, smooth transition, hover/focus/active effects with dark mode adjustments -->
+            </div>
+        </div>
+        <!-- Product card -->
+        <div class="block rounded-lg w-full sm:w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative"><!-- Block display, rounded large corners, full width mobile, 30% width sm+, height 60%, dark semi-transparent bg, border black, shadow, dark mode bg, bottom margin 4, hide overflow, relative positioning -->
+            <img id="skogsta-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="./img/skogsta.jpg" alt="" /><!-- Full width, auto height, max height 64, cover object-fit, rounded top corners, smooth transform on hover scaling 105% -->
+            <div class="p-6 text-surface text-white"><!-- Padding 6, white text -->
+                <h5 class="mb-2 text-xl font-medium leading-tight">Skogsta</h5><!-- Margin-bottom 2, extra-large text, medium font weight, tight line height -->
+                <p class="mb-4 hidden lg:block">Designed by the most known designers of the world (who will remain anonymous), this fancy table is one the finest piece of furniture you could find. When modern art and decoration meet, Skogsta is here.</p><!-- Hidden by default, visible on lg+ -->
+                <p class="mb-4 hidden sm:block lg:hidden">Designed by the most known designers of the world...</p><!-- Hidden by default, visible sm+, hidden lg+ -->
+                <p class="mb-4 block sm:hidden">Designed by the most known designers of the world...</p><!-- Block by default, hidden sm+ -->
                 <button type="button" class="inline-block rounded bg-green-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-ripple-init data-twe-ripple-color="black">
                     More info...
                 </button>
             </div>
         </div>
-        <div class="block rounded-lg w-full sm:w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative">
-            <img id="skogsta-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="./img/skogsta.jpg" alt="" />
-            <div class="p-6 text-surface text-white">
-                <h5 class="mb-2 text-xl font-medium leading-tight">Skogsta</h5>
-                <p class="mb-4 hidden lg:block">
-                    Designed by the most known designers of the world (who will remain anonymous), this fancy table is one the finest piece of furniture you could find. When modern art and decoration meet, Skogsta is here.
-                </p>
-                <p class="mb-4 hidden sm:block lg:hidden">
-                    Designed by the most known designers of the world...
-                </p>
-                <p class="mb-4 block sm:hidden">
-                    Designed by the most known designers of the world...
-                </p>
-                <button type="button" class="inline-block rounded bg-green-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-ripple-init data-twe-ripple-color="black">
-                    More info...
-                </button>
-            </div>
-        </div>
-        <div class="block rounded-lg w-full sm:w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative">
+        <!-- Product card -->
+        <div class="block rounded-lg w-full sm:w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative"><!-- Block display, rounded large corners, full width mobile, 30% width sm+, height 60%, dark semi-transparent bg, border black, shadow, dark mode bg, bottom margin 4, hide overflow, relative positioning -->
             <img id="stockholm-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="./img/stockholm.jpg" alt="" />
             <div class="p-6 text-surface text-white">
                 <h5 class="mb-2 text-xl font-medium leading-tight">Stockholm</h5>
-                <p class="mb-4 hidden lg:block">
-                    Basic but efficient, Stockholm will fulfill your needs for a family table. Its rounded extremities is perfect for family reunion as no one will be excluded.
-                </p>
-                <p class="mb-4 hidden sm:block lg:hidden">
-                    Basic but efficient, Stockholm will fulfill your needs...
-                </p>
-                <p class="mb-4 block sm:hidden">
-                    Basic but efficient, Stockholm will fulfill your needs...
-                </p>
+                <p class="mb-4 hidden lg:block">Basic but efficient, Stockholm will fulfill your needs for a family table. Its rounded extremities is perfect for family reunion as no one will be excluded.</p>
+                <p class="mb-4 hidden sm:block lg:hidden">Basic but efficient, Stockholm will fulfill your needs...</p>
+                <p class="mb-4 block sm:hidden">Basic but efficient, Stockholm will fulfill your needs...</p>
                 <button type="button" class="inline-block rounded bg-green-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-ripple-init data-twe-ripple-color="black">
                     More info...
                 </button>
             </div>
         </div>
-        <div class="block rounded-lg w-full sm:w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative">
+        <!-- Product card -->
+        <div class="block rounded-lg w-full sm:w-3/10 h-6/10 bg-black/80 border border-black shadow-secondary-1 dark:bg-surface-dark mb-4 overflow-hidden relative"><!-- Block display, rounded large corners, full width mobile, 30% width sm+, height 60%, dark semi-transparent bg, border black, shadow, dark mode bg, bottom margin 4, hide overflow, relative positioning -->
             <img id="tarsele-img" class="w-full h-auto max-h-64 object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105" src="./img/tarsele.jpg" alt="" />
             <div class="p-6 text-surface text-white">
                 <h5 class="mb-2 text-xl font-medium leading-tight">Tarsele</h5>
-                <p class="mb-4 hidden lg:block">
-                    Not for the faint of heart, Tarsele approaches the table design with a brutal aspect. The contrast between its wooden top and steel foot brings together nature and metal, perfect representation of the duality of men.
-                </p>
-                <p class="mb-4 hidden sm:block lg:hidden">
-                    Not for the faint of heart, Tarsele approaches the table design...
-                </p>
-                <p class="mb-4 block sm:hidden">
-                    Not for the faint of heart, Tarsele approaches the table design...
-                </p>
+                <p class="mb-4 hidden lg:block">Not for the faint of heart, Tarsele approaches the table design with a brutal aspect. The contrast between its wooden top and steel foot brings together nature and metal, perfect representation of the duality of men.</p>
+                <p class="mb-4 hidden sm:block lg:hidden">Not for the faint of heart, Tarsele approaches the table design...</p>
+                <p class="mb-4 block sm:hidden">Not for the faint of heart, Tarsele approaches the table design...</p>
                 <button type="button" class="inline-block rounded bg-green-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-ripple-init data-twe-ripple-color="black">
                     More info...
                 </button>
             </div>
         </div>
     </div>
-    <div id="product-modal" class="fixed inset-0 hidden z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center">
-        <div class="bg-white dark:bg-stone-900 rounded-xl w-11/12 max-w-3xl p-6 relative shadow-2xl transform transition-transform duration-300 scale-90">
-            <!-- Bouton fermer -->
-            <button id="modal-close" class="absolute top-4 right-4 text-gray-700 dark:text-gray-200 hover:text-red-500">
-                &times;
-            </button>
-            <div class="flex flex-col md:flex-row gap-6">
-                <!-- Image produit -->
-                <img id="modal-img" src="" alt="Product" class="w-full md:w-1/2 rounded-lg object-contain flex-shrink-0">
-                <!-- Infos produit -->
-                <div class="flex flex-col justify-between gap-4">
-                    <h2 id="modal-name" class="text-2xl font-bold text-gray-900 dark:text-white"></h2>
+    <div id="product-modal" class="fixed inset-0 hidden z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center"><!-- Fullscreen fixed modal, hidden by default, z-index 50, semi-transparent black with blur, flex center content -->
+        <div class="bg-white dark:bg-stone-900 rounded-xl w-11/12 max-w-3xl p-6 relative shadow-2xl transform transition-transform duration-300 scale-90"><!-- Modal container, white or dark bg, rounded corners, width 11/12 max 3xl, padding 6, relative, shadow, transform scale 90% initially, smooth transition -->
+
+            <!-- Modal close button -->
+            <button id="modal-close" class="absolute top-4 right-4 text-gray-700 dark:text-gray-200 hover:text-red-500">&times;</button><!-- Absolute positioned top right, gray text with dark mode adjustment, hover red -->
+
+            <div class="flex flex-col md:flex-row gap-6"><!-- Flex column mobile, row on md+, gap 6 -->
+
+                <!-- Modal image -->
+                <img id="modal-img" src="./img/alhult.jpg" alt="Product" class="w-full md:w-1/2 rounded-lg object-contain flex-shrink-0"><!-- Full width mobile, half width md+, rounded corners, contain object fit, prevent shrinking -->
+
+                <!-- Modal product info -->
+                <div class="flex flex-col justify-between gap-4"><!-- Flex column, justify between, gap 4 -->
+                    <h2 id="modal-name" class="text-2xl font-bold text-gray-900 dark:text-white"></h2><!-- 2xl text, bold, gray/white -->
                     <p id="modal-description" class="text-gray-700 dark:text-gray-300"></p>
                     <p id="modal-price" class="text-xl font-semibold text-green-700 dark:text-green-400"></p>
                     <p id="modal-material" class="text-gray-600 dark:text-gray-400"></p>
@@ -155,14 +137,12 @@
     </div>
     <footer class="bg-black/70 backdrop-blur-md text-white p-10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-
-            <!-- Section 1 : Marque -->
+            <!-- Section 1 : Brand -->
             <div class="flex flex-col space-y-2">
                 <h2 class="text-2xl font-bold">TableShop</h2>
                 <p class="text-sm italic text-gray-300">May the tables never turn</p>
             </div>
-
-            <!-- Section 2 : Liens -->
+            <!-- Section 2 : Links -->
             <div class="flex flex-col space-y-2">
                 <h3 class="text-lg font-semibold mb-2">Links</h3>
                 <a href="./index.html" class="hover:text-blue-400 transition">Home</a>
@@ -170,7 +150,6 @@
                 <a href="./contact.html" class="hover:text-blue-400 transition">Contact</a>
                 <a href="./about.html" class="hover:text-blue-400 transition">About Us</a>
             </div>
-
             <!-- Section 3 : Contact -->
             <div class="flex flex-col space-y-2">
                 <h3 class="text-lg font-semibold mb-2">Contact</h3>
@@ -178,8 +157,7 @@
                 <span>+33 6 12 34 56 78</span>
                 <span>1 Tax Evasion Street, 45450 Malt</span>
             </div>
-
-            <!-- Section 4 : Réseaux sociaux -->
+            <!-- Section 4 : Social network -->
             <div class="flex flex-col space-y-2">
                 <h3 class="text-lg font-semibold mb-2">Find us on</h3>
                 <div class="flex flex-row space-x-3">
@@ -197,6 +175,7 @@
         </div>
     </footer>
     <script>
+        // Function to make header transparent when scrolling
         window.addEventListener('scroll', function () {
             const header = document.getElementById('main-header');
             const navbar = document.getElementById('navbar');
@@ -215,7 +194,8 @@
                 navbar.classList.add('bg-stone-800/100');
             }
         });
-        // Off-canvas mobile menu toggle
+        // Toggle for mobile menu
+        // Toggle for mobile menu
         const menuToggle = document.getElementById('menu-toggle');
         const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -224,67 +204,82 @@
             mobileMenu.classList.remove("hidden");
             mobileMenu.classList.remove('translate-x-full');
             mobileMenu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';// Disable scrolling
+            document.body.style.height = '100vh';
         });
 
-        menuClose.addEventListener('click', () => {
+        function closeMenu() {
             mobileMenu.classList.remove('translate-x-0');
             mobileMenu.classList.add('translate-x-full');
             mobileMenu.classList.add("hidden");
+            document.body.style.overflow = ''; // Re-enable scrolling
+            document.body.style.height = '';
+        }
+
+        menuClose.addEventListener('click', closeMenu);
+
+        // Close menu if click is outside the menu
+        document.addEventListener('click', (event) => {
+            const isClickInside = mobileMenu.contains(event.target) || menuToggle.contains(event.target);
+            if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+                closeMenu();
+            }
         });
+        // Get products img elements
         const alhultimg = document.getElementById('alhult-img');
         const stockholmimg = document.getElementById('stockholm-img');
         const skogstaimg = document.getElementById('skogsta-img');
         const tarseleimg = document.getElementById('tarsele-img');
 
-        // Quand la souris entre sur l'image
+        // Mouse hover
         alhultimg.addEventListener('mouseenter', () => {
             alhultimg.classList.remove('object-cover');
             alhultimg.classList.add('object-contain', 'scale-110');
         });
 
-        // Quand la souris sort de l'image
+        // Mouse exit hover
         alhultimg.addEventListener('mouseleave', () => {
             alhultimg.classList.remove('object-contain', 'scale-110');
             alhultimg.classList.add('object-cover');
         });
 
-        // Quand la souris entre sur l'image
+        // Mouse hover
         stockholmimg.addEventListener('mouseenter', () => {
             stockholmimg.classList.remove('object-cover');
             stockholmimg.classList.add('object-contain', 'scale-110');
         });
 
-        // Quand la souris sort de l'image
+        // Mouse exit hover
         stockholmimg.addEventListener('mouseleave', () => {
             stockholmimg.classList.remove('object-contain', 'scale-110');
             stockholmimg.classList.add('object-cover');
         });
 
-        // Quand la souris entre sur l'image
+        // Mouse hover
         skogstaimg.addEventListener('mouseenter', () => {
             skogstaimg.classList.remove('object-cover');
             skogstaimg.classList.add('object-contain', 'scale-110');
         });
 
-        // Quand la souris sort de l'image
+        // Mouse exit hover
         skogstaimg.addEventListener('mouseleave', () => {
             skogstaimg.classList.remove('object-contain', 'scale-110');
             skogstaimg.classList.add('object-cover');
         });
 
-        // Quand la souris entre sur l'image
+        // Mouse hover
         tarseleimg.addEventListener('mouseenter', () => {
             tarseleimg.classList.remove('object-cover');
             tarseleimg.classList.add('object-contain', 'scale-110');
         });
 
-        // Quand la souris sort de l'image
+        // Mouse exit hover
         tarseleimg.addEventListener('mouseleave', () => {
             tarseleimg.classList.remove('object-contain', 'scale-110');
             tarseleimg.classList.add('object-cover');
         });
 
-        // Sélection des boutons produit
+        // Button product selection
         const productButtons = document.querySelectorAll('#productlist button');
         const modal = document.getElementById('product-modal');
         const modalImg = document.getElementById('modal-img');
@@ -297,7 +292,7 @@
         const modalHeight = document.getElementById('modal-height');
         const modalClose = document.getElementById('modal-close');
 
-        // Exemple de données produit (tu peux les compléter ou les générer dynamiquement)
+        // Products data
         const products = {
             'Alhult': {
                 img: './img/alhult-full.jpg',
@@ -341,7 +336,7 @@
             }
         };
 
-        // Ouvrir modal avec animation
+        // Open modal menu
         productButtons.forEach(button => {
             button.addEventListener('click', (e) => {
                 const productDiv = e.target.closest('div.block');
@@ -367,7 +362,7 @@
             });
         });
 
-        // Fermer modal avec retour à l'état initial
+        // Close modal menu with click on button
         modalClose.addEventListener('click', () => {
             const modalContent = modal.querySelector('div.bg-white');
             modalContent.classList.remove('scale-100');
@@ -378,7 +373,7 @@
                 document.body.classList.remove('overflow-hidden');
             }, 200);
         });
-        // Fermer modal au clic hors contenu
+        // Close modal menu when clicked outside
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.add('hidden');

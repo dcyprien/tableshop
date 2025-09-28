@@ -8,105 +8,107 @@
     <title>Table Shop</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="flex flex-col w-full min-h-screen bg-[url('./img/bg.jpg')] bg-cover bg-center bg-no-repeat bg-white/30 max-sm:overflow-x-hidden">
-    <header id="main-header" class="w-full sticky z-50 left-0 top-0 bg-stone-900/80 backdrop-blur-md transition duration-300 ease-in-out shadow-md">
-        <!-- Header principal -->
-        <div class="mx-auto flex justify-center  w-full max-w-7xl">
-            <!-- Titre -->
-            <a href="./index.html" class="flex items-center h-full">
-                <img src="./img/logo.png" alt="TableShop Logo" class="h-28 sm:h-32 drop-shadow-lg">
+<body class="flex flex-col w-full min-h-screen bg-[url('./img/bg.jpg')] bg-cover bg-center bg-no-repeat bg-white/30 max-sm:overflow-x-hidden"><!-- Flex column layout, full width, min-height = screen height, background image with cover & center, semi-transparent white overlay, hide horizontal overflow on max-sm screens -->
+
+    <header id="main-header" class="w-full sticky z-50 left-0 top-0 bg-stone-900/80 backdrop-blur-md transition duration-300 ease-in-out shadow-md"><!-- Full width, sticky top, z-index 50, semi-transparent dark background with blur, smooth transition with shadow -->
+
+        <div class="mx-auto flex justify-center w-full max-w-7xl"><!-- Container centered horizontally, flex layout, justify content center, full width up to max width 7xl -->
+
+            <!-- Title -->
+            <a href="./index.html" class="flex items-center h-full"><!-- Flex container, vertically center items, full height -->
+                <img src="./img/logo.png" alt="TableShop Logo" class="h-28 sm:h-32 drop-shadow-lg"><!-- Height 28 by default, 32 on sm+ screens, drop shadow -->
             </a>
-            <!-- Bouton menu mobile (non modifié) -->
-            <button id="menu-toggle" class="md:hidden text-white focus:outline-none ml-4">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Button mobile menu -->
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none ml-4"><!-- Hidden on md+ screens, white text, no outline on focus, margin-left 4 -->
+                <svg class="w-6 h-6" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
+
         <!-- Navbar desktop -->
-        <nav id="navbar" class="hidden md:flex justify-center space-x-8 bg-stone-800/100 text-white py-3 w-full shadow-inner">
-            <a href="./index.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">Home</a>
+        <nav id="navbar" class="hidden md:flex justify-center space-x-8 bg-stone-800/100 text-white py-3 w-full shadow-inner"><!-- Hidden on mobile, flex layout on md+, items centered, horizontal spacing 8, solid dark background, white text, vertical padding 3, full width, inner shadow -->
+            <a href="./index.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">Home</a><!-- Padding x4 y2, rounded corners, hover background color, smooth transition 200ms -->
             <a href="./shop.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">Shop</a>
             <a href="./contact.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">Contact</a>
             <a href="./about.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">About us</a>
         </nav>
-        <!-- Menu mobile (inchangé) -->
-        <div id="mobile-menu" class="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-green-600/95 backdrop-blur-sm text-white transform translate-x-full transition-transform duration-300 ease-in-out hidden z-50 shadow-2xl border-l border-green-700">
-            <div class="flex justify-between items-center px-4 py-4 border-b border-green-700">
-                <span class="font-bold text-lg">Menu</span>
-                <button id="menu-close" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- Mobile navbar -->
+        <div id="mobile-menu" class="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-green-600/95 backdrop-blur-sm text-white transform translate-x-full transition-transform duration-300 ease-in-out hidden z-50 shadow-2xl border-l border-green-700"><!-- Fixed position, full screen height, 80% width max xs, semi-transparent green with blur, white text, initially offscreen with translate-x-full, smooth transform transition, hidden by default, z-index 50, shadow 2xl, left border -->
+
+            <div class="flex justify-between items-center px-4 py-4 border-b border-green-700"><!-- Flex row, space between, vertical center, padding x4 y4, bottom border -->
+                <span class="font-bold text-lg">Menu</span><!-- Bold text, large size -->
+                <button id="menu-close" class="text-white focus:outline-none"><!-- White text, remove focus outline -->
+                    <svg class="w-6 h-6" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
-            <nav class="flex flex-col px-4 py-4 space-y-2 text-base font-semibold text-white">
-                <a href="./index.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">Home</a>
+
+            <nav class="flex flex-col px-4 py-4 space-y-2 text-base font-semibold text-white"><!-- Flex column, padding, vertical spacing 2 between items, base text size, semi-bold, white text -->
+                <a href="./index.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">Home</a><!-- Padding, rounded medium corners, green bg, hover darker green, smooth color transition, border -->
                 <a href="./shop.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">Shop</a>
                 <a href="./contact.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">Contact</a>
                 <a href="./about.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">About us</a>
             </nav>
         </div>
     </header>
-    <div class="bg-white/20">
-    <form class="max-w-4xl w-full mx-auto bg-white/20 backdrop-blur-md p-8 rounded-xl shadow-lg flex flex-col gap-6">
-        <div class="flex flex-col md:flex-row gap-4">
-            <!-- First Name -->
-            <div class="flex-1 flex flex-col">
-                <label for="fname" class="mb-1 font-medium text-gray-700 dark:text-gray-200">First Name</label>
-                <input type="text" id="fname" name="firstname" placeholder="John"
-                       class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+    <!-- Contact Form -->
+    <div class="bg-white/20"><!-- Semi-transparent white background for the section -->
+        <form class="max-w-4xl w-full mx-auto bg-white/20 backdrop-blur-md p-8 rounded-xl shadow-lg flex flex-col gap-6"><!-- Max width 4xl, full width, center horizontally, semi-transparent white with blur, padding 8, rounded corners xl, shadow, flex column layout, gap 6 between items -->
+
+            <div class="flex flex-col md:flex-row gap-4"><!-- Flex column by default, row on md+, gap 4 -->
+                <!-- First Name -->
+                <div class="flex-1 flex flex-col"><!-- Flex-grow 1, column layout -->
+                    <label for="fname" class="mb-1 font-medium text-gray-700 dark:text-gray-200">First Name</label><!-- Margin bottom 1, medium font weight, gray text with dark mode adjustment -->
+                    <input type="text" id="fname" name="firstname" placeholder="John" class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" /><!-- Padding 3, rounded corners lg, border gray with dark mode, semi-transparent white bg with dark mode, text color gray/white, focus ring blue 2, remove default outline, smooth transition -->
+                </div>
+
+                <!-- Last Name -->
+                <div class="flex-1 flex flex-col">
+                    <label for="lname" class="mb-1 font-medium text-gray-700 dark:text-gray-200">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Doe" class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+                </div>
             </div>
 
-            <!-- Last Name -->
-            <div class="flex-1 flex flex-col">
-                <label for="lname" class="mb-1 font-medium text-gray-700 dark:text-gray-200">Last Name</label>
-                <input type="text" id="lname" name="lastname" placeholder="Doe"
-                       class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+            <!-- Email -->
+            <div class="flex flex-col">
+                <label for="email" class="mb-1 font-medium text-gray-700 dark:text-gray-200">Email</label>
+                <input type="email" id="email" name="email" placeholder="john.doe@email.com" class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
             </div>
-        </div>
-        <!-- Email -->
-        <div class="flex flex-col">
-            <label for="email" class="mb-1 font-medium text-gray-700 dark:text-gray-200">Email</label>
-            <input type="email" id="email" name="email" placeholder="john.doe@email.com"
-                   class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
-        </div>
 
-        <!-- Subject -->
-        <div class="flex flex-col">
-            <label for="subject" class="mb-1 font-medium text-gray-700 dark:text-gray-200">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="My table is not working"
-                   class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
-        </div>
+            <!-- Subject -->
+            <div class="flex flex-col">
+                <label for="subject" class="mb-1 font-medium text-gray-700 dark:text-gray-200">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="My table is not working" class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+            </div>
 
-        <!-- Message -->
-        <div class="flex flex-col">
-            <label for="message" class="mb-1 font-medium text-gray-700 dark:text-gray-200">Your message</label>
-            <textarea id="message" name="message" placeholder="Write your message here &#10;Example: I received my table but it's a chair"
-                      class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition h-32 resize-none"></textarea>
-        </div>
+            <!-- Message -->
+            <div class="flex flex-col">
+                <label for="message" class="mb-1 font-medium text-gray-700 dark:text-gray-200">Your message</label>
+                <textarea id="message" name="message" placeholder="Write your message here &#10;Example: I received my table but it's a chair" class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition h-32 resize-none"></textarea><!-- Height 32, disable resizing -->
+            </div>
 
-        <!-- Submit Button -->
-        <button type="submit" name="submit"
-                class="mt-4 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-blue-600 hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-            Send
-        </button>
-    </form>
+            <!-- Submit Button -->
+            <button type="submit" name="submit" class="mt-4 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-blue-600 hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Send</button><!-- Margin top 4, padding y3, green bg, white text, semi-bold, rounded corners, hover effects, smooth transition, focus ring with offset -->
+
+        </form>
     </div>
 
+    <!-- Footer -->
+    <footer class="bg-black/70 backdrop-blur-md text-white p-10"><!-- Black semi-transparent background with blur, white text, padding 10 -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"><!-- Max width 7xl, centered, grid layout: 1 col default, 2 cols sm+, 4 cols lg+, gap 10 -->
 
-    <footer class="bg-black/70 backdrop-blur-md text-white p-10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-
-            <!-- Section 1 : Marque -->
-            <div class="flex flex-col space-y-2">
+            <!-- Section 1 : Brand -->
+            <div class="flex flex-col space-y-2"><!-- Flex column, vertical spacing 2 -->
                 <h2 class="text-2xl font-bold">TableShop</h2>
                 <p class="text-sm italic text-gray-300">May the tables never turn</p>
             </div>
 
-            <!-- Section 2 : Liens -->
+            <!-- Section 2 : Links -->
             <div class="flex flex-col space-y-2">
                 <h3 class="text-lg font-semibold mb-2">Links</h3>
                 <a href="./index.html" class="hover:text-blue-400 transition">Home</a>
@@ -123,24 +125,20 @@
                 <span>1 Tax Evasion Street, 45450 Malt</span>
             </div>
 
-            <!-- Section 4 : Réseaux sociaux -->
+            <!-- Section 4 : Social network -->
             <div class="flex flex-col space-y-2">
                 <h3 class="text-lg font-semibold mb-2">Find us on</h3>
-                <div class="flex flex-row space-x-3">
-                    <a href="https://facebook.com" target="_blank" class="bg-blue-600 p-3 rounded-full hover:bg-blue-700 hover:scale-110 transition transform shadow-lg">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://x.com" target="_blank" class="bg-blue-400 p-3 rounded-full hover:bg-blue-500 hover:scale-110 transition transform shadow-lg">
-                        <i class="fab fa-x"></i>
-                    </a>
-                    <a href="https://instagram.com" target="_blank" class="bg-pink-500 p-3 rounded-full hover:bg-pink-600 hover:scale-110 transition transform shadow-lg">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                <div class="flex flex-row space-x-3"><!-- Horizontal flex with spacing 3 -->
+                    <a href="https://facebook.com" target="_blank" class="bg-blue-600 p-3 rounded-full hover:bg-blue-700 hover:scale-110 transition transform shadow-lg"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com" target="_blank" class="bg-blue-400 p-3 rounded-full hover:bg-blue-500 hover:scale-110 transition transform shadow-lg"><i class="fab fa-x"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="bg-pink-500 p-3 rounded-full hover:bg-pink-600 hover:scale-110 transition transform shadow-lg"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
+
         </div>
     </footer>
     <script>
+        // Function to make header transparent when scrolling
         window.addEventListener('scroll', function () {
             const header = document.getElementById('main-header');
             const navbar = document.getElementById('navbar');
@@ -159,7 +157,7 @@
                 navbar.classList.add('bg-stone-800/100');
             }
         });
-        // Off-canvas mobile menu toggle
+        // Toggle for mobile menu
         const menuToggle = document.getElementById('menu-toggle');
         const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -168,12 +166,26 @@
             mobileMenu.classList.remove("hidden");
             mobileMenu.classList.remove('translate-x-full');
             mobileMenu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';// Disable scrolling
+            document.body.style.height = '100vh';
         });
 
-        menuClose.addEventListener('click', () => {
+        function closeMenu() {
             mobileMenu.classList.remove('translate-x-0');
             mobileMenu.classList.add('translate-x-full');
             mobileMenu.classList.add("hidden");
+            document.body.style.overflow = ''; // Re-enable scrolling
+            document.body.style.height = '';
+        }
+
+        menuClose.addEventListener('click', closeMenu);
+
+        // Close menu if click is outside the menu
+        document.addEventListener('click', (event) => {
+            const isClickInside = mobileMenu.contains(event.target) || menuToggle.contains(event.target);
+            if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+                closeMenu();
+            }
         });
     </script>
 </body>

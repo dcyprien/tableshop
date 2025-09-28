@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="overflow-x-hidden">
+<html lang="en" class="overflow-x-hidden"><!-- overflow-x-hidden: prevent horizontal scroll on the page -->
 <head>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
     <meta charset="UTF-8">
@@ -9,93 +9,228 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="flex flex-col w-full min-h-screen bg-[url('./img/bg.jpg')] bg-white/20 bg-cover bg-center bg-no-repeat max-sm:overflow-x-hidden">
+<!-- flex flex-col: vertical layout-->
+<!-- w-full: full width -->
+<!-- min-h-screen: minimum height = screen height -->
+<!-- bg-[url()]: background image -->
+<!-- bg-white/20: semi-transparent white overlay -->
+<!-- bg-cover: background covers container -->
+<!-- bg-center: center background image -->
+<!-- bg-no-repeat: do not repeat background -->
+<!-- max-sm:overflow-x-hidden: disable horizontal scroll on small screens -->
+
+    <!-- Header -->
     <header id="main-header" class="w-full sticky z-50 left-0 top-0 bg-stone-900/80 backdrop-blur-md transition duration-300 ease-in-out shadow-md">
+        <!-- w-full: full width -->
+        <!-- sticky top-0 left-0: stick to top-left -->
+        <!-- z-50: high stacking order -->
+        <!-- bg-stone-900/80: dark semi-transparent background -->
+        <!-- backdrop-blur-md: medium blur -->
+        <!-- transition duration-300 ease-in-out: smooth transitions -->
+        <!-- shadow-md: medium shadow -->
 
-        <!-- Header principal -->
-        <div class="mx-auto flex justify-center  w-full max-w-7xl">
+        <div class="mx-auto flex justify-center w-full max-w-7xl">
+            <!-- mx-auto: center horizontally -->
+            <!-- flex justify-center: flexbox layout, center content horizontally -->
+            <!-- w-full: full width -->
+            <!-- max-w-7xl: max width constraint -->
 
-            <!-- Titre -->
+            <!-- Logo -->
             <a href="./index.html" class="flex items-center h-full">
+                <!-- flex items-center: vertically center content -->
+                <!-- h-full: link height = parent height -->
                 <img src="./img/logo.png" alt="TableShop Logo" class="h-28 sm:h-32 drop-shadow-lg">
+                <!-- h-28 sm:h-32: height 28 default, 32 on small screens and up -->
+                <!-- drop-shadow-lg: large drop shadow -->
             </a>
 
-            <!-- Bouton menu mobile (non modifié) -->
+            <!-- Mobile menu button -->
             <button id="menu-toggle" class="md:hidden text-white focus:outline-none ml-4">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg">
+                <!-- md:hidden: hidden on medium+ screens -->
+                <!-- text-white: icon color white -->
+                <!-- focus:outline-none: remove default focus outline -->
+                <!-- ml-4: left margin -->
+                <svg class="w-6 h-6" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <!-- w-6 h-6: width and height -->
+                    <!-- stroke-currentColor: stroke color same as text color -->
+                    <!-- stroke-width="2": line thickness -->
                 </svg>
             </button>
         </div>
 
-        <!-- Navbar desktop -->
+        <!-- Desktop navbar -->
         <nav id="navbar" class="hidden md:flex justify-center space-x-8 bg-stone-800/100 text-white py-3 w-full shadow-inner">
+            <!-- hidden md:flex: hidden on mobile, flex on medium+ screens -->
+            <!-- justify-center: center items horizontally -->
+            <!-- space-x-8: horizontal spacing between links -->
+            <!-- bg-stone-800/100: solid dark gray background -->
+            <!-- text-white: white text -->
+            <!-- py-3: vertical padding -->
+            <!-- w-full: full width -->
+            <!-- shadow-inner: inner shadow -->
+
             <a href="./index.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">Home</a>
             <a href="./shop.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">Shop</a>
             <a href="./contact.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">Contact</a>
             <a href="./about.html" class="px-4 py-2 rounded hover:bg-stone-700 transition duration-200">About us</a>
+            <!-- px-4 py-2: padding -->
+            <!-- rounded: slightly rounded corners -->
+            <!-- hover:bg-stone-700: darker background on hover -->
+            <!-- transition duration-200: smooth hover transition -->
         </nav>
 
-        <!-- Menu mobile (inchangé) -->
+        <!-- Mobile navbar -->
         <div id="mobile-menu" class="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-green-600/95 backdrop-blur-sm text-white transform translate-x-full transition-transform duration-300 ease-in-out hidden z-50 shadow-2xl border-l border-green-700">
+            <!-- fixed top-0 right-0: fixed to top-right -->
+            <!-- h-screen: full screen height -->
+            <!-- w-4/5 max-w-xs: width responsive, max width xs -->
+            <!-- bg-green-600/95: semi-transparent green -->
+            <!-- backdrop-blur-sm: small blur -->
+            <!-- text-white: white text -->
+            <!-- transform translate-x-full: move offscreen right initially -->
+            <!-- transition-transform duration-300 ease-in-out: smooth slide animation -->
+            <!-- hidden: start hidden -->
+            <!-- z-50: stacking order -->
+            <!-- shadow-2xl: large shadow -->
+            <!-- border-l border-green-700: left border -->
+
             <div class="flex justify-between items-center px-4 py-4 border-b border-green-700">
+                <!-- flex justify-between: space between elements -->
+                <!-- items-center: vertically center content -->
+                <!-- px-4 py-4: padding -->
+                <!-- border-b border-green-700: bottom border -->
                 <span class="font-bold text-lg">Menu</span>
-                <button id="menu-close" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" stroke="currentColor" stroke-width="2"
-                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <button id="menu-close" class="text-white focus:outline-none"><!-- White text, remove outline on focus -->
+                    <svg class="w-6 h-6" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
 
             <nav class="flex flex-col px-4 py-4 space-y-2 text-base font-semibold text-white">
+                <!-- flex flex-col: vertical layout -->
+                <!-- px-4 py-4: padding -->
+                <!-- space-y-2: spacing between links -->
+                <!-- text-base: font size -->
+                <!-- font-semibold: semi-bold -->
+                <!-- text-white: white text -->
+
                 <a href="./index.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">Home</a>
                 <a href="./shop.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">Shop</a>
                 <a href="./contact.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">Contact</a>
                 <a href="./about.html" class="px-4 py-3 rounded-md bg-green-700/100 hover:bg-green-800 transition-colors border border-green-700">About us</a>
+                <!-- rounded-md: medium rounded corners -->
+                <!-- bg-green-700/100: green background -->
+                <!-- hover:bg-green-800: darker on hover -->
+                <!-- transition-colors: smooth color transition -->
+                <!-- border border-green-700: border -->
             </nav>
         </div>
     </header>
-<video class="h-full w-full bg-white/30 relative z-0 py-5 px-5" src="./img/video.mp4" muted loop autoPlay></video>
-    <section class="w-full h-full flex bg-white/30 justify-center py-8 px-8">
-        <div class="bg-stone-800/90 shadow-lg rounded-lg p-6 flex flex-col md:flex-row items-center w-full max-w-5xl">
 
-            <!-- Texte et bouton -->
+    <!-- Video Section -->
+    <video class="h-full w-full bg-white/30 relative z-0 py-5 px-5" src="./img/video.mp4" muted loop autoPlay></video>
+    <!-- h-full w-full: full width and height -->
+    <!-- bg-white/30: semi-transparent white overlay -->
+    <!-- relative z-0: relative positioning with z-index 0 -->
+    <!-- py-5 px-5: padding -->
+    <!-- muted loop autoPlay: muted, loop, autoplay video -->
+
+    <!-- Products Section -->
+    <section class="w-full h-full flex bg-white/30 justify-center py-8 px-8">
+        <!-- w-full h-full: full width and height -->
+        <!-- flex justify-center: flex layout, center horizontally -->
+        <!-- bg-white/30: semi-transparent white background -->
+        <!-- py-8 px-8: padding -->
+
+        <div class="bg-stone-800/90 shadow-lg rounded-lg p-6 flex flex-col md:flex-row items-center w-full max-w-5xl">
+            <!-- bg-stone-800/90: dark semi-transparent background -->
+            <!-- shadow-lg: large shadow -->
+            <!-- rounded-lg: rounded corners -->
+            <!-- p-6: padding -->
+            <!-- flex flex-col md:flex-row: vertical on mobile, horizontal on md+ screens -->
+            <!-- items-center: center items vertically -->
+            <!-- w-full: full width -->
+            <!-- max-w-5xl: maximum width -->
+
+            <!-- Text and Button -->
             <div class="w-full md:w-1/2 text-center md:text-left mb-6 md:mb-0">
+                <!-- w-full md:w-1/2: full width mobile, half width md+ -->
+                <!-- text-center md:text-left: center text mobile, left text md+ -->
+                <!-- mb-6 md:mb-0: margin bottom mobile, 0 md+ -->
                 <h2 class="text-2xl text-white font-bold mb-4">Shop your table now</h2>
-                <a href="./shop.html" class="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">
-                    Browse Tables
-                </a>
+                <!-- text-2xl: font size -->
+                <!-- text-white: white text -->
+                <!-- font-bold: bold -->
+                <!-- mb-4: bottom margin -->
+
+                <a href="./shop.html" class="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">Browse Tables</a>
+                <!-- inline-block: allow padding/margin to work properly -->
+                <!-- bg-green-600: green background -->
+                <!-- text-white: white text -->
+                <!-- px-6 py-2: padding -->
+                <!-- rounded: slightly rounded corners -->
+                <!-- hover:bg-green-700: darker on hover -->
+                <!-- transition: smooth hover effect -->
             </div>
 
-            <!-- Diaporama -->
+            <!-- Carousel -->
             <div class="w-full md:w-1/2">
+                <!-- w-full md:w-1/2: full width mobile, half width md+ -->
                 <div class="flex flex-row relative overflow-hidden rounded-lg h-80 md:h-96">
+                    <!-- flex flex-row: horizontal flex layout -->
+                    <!-- relative: position relative -->
+                    <!-- overflow-hidden: hide overflow content -->
+                    <!-- rounded-lg: rounded corners -->
+                    <!-- h-80 md:h-96: fixed height, larger on md+ screens -->
+
                     <img id="carousel-image" src="./img/tarsele-transparent.png" alt="Table preview" class="w-full h-auto transition duration-300">
+                    <!-- w-full: full width -->
+                    <!-- h-auto: maintain aspect ratio -->
+                    <!-- transition duration-300: smooth transition for JS carousel -->
                 </div>
             </div>
-
         </div>
     </section>
-    <footer class="bg-black/70 backdrop-blur-md text-white p-10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-            <!-- Section 1 : Marque -->
+    <!-- Footer -->
+    <footer class="bg-black/70 backdrop-blur-md text-white p-10">
+        <!-- bg-black/70: semi-transparent black -->
+        <!-- backdrop-blur-md: medium blur -->
+        <!-- text-white: white text -->
+        <!-- p-10: padding -->
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            <!-- max-w-7xl mx-auto: center content with max width -->
+            <!-- grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4: responsive grid -->
+            <!-- gap-10: gap between items -->
+
+            <!-- Brand -->
             <div class="flex flex-col space-y-2">
+                <!-- flex flex-col: vertical layout -->
+                <!-- space-y-2: spacing between elements -->
                 <h2 class="text-2xl font-bold">TableShop</h2>
+                <!-- text-2xl: font size -->
+                <!-- font-bold: bold -->
                 <p class="text-sm italic text-gray-300">May the tables never turn</p>
+                <!-- text-sm: small font -->
+                <!-- italic: italic text -->
+                <!-- text-gray-300: light gray text -->
             </div>
 
-            <!-- Section 2 : Liens -->
+            <!-- Links -->
             <div class="flex flex-col space-y-2">
                 <h3 class="text-lg font-semibold mb-2">Links</h3>
                 <a href="./index.html" class="hover:text-blue-400 transition">Home</a>
                 <a href="./shop.html" class="hover:text-blue-400 transition">Shop</a>
                 <a href="./contact.html" class="hover:text-blue-400 transition">Contact</a>
                 <a href="./about.html" class="hover:text-blue-400 transition">About Us</a>
+                <!-- hover:text-blue-400: change color on hover -->
+                <!-- transition: smooth hover transition -->
             </div>
 
-            <!-- Section 3 : Contact -->
+            <!-- Contact -->
             <div class="flex flex-col space-y-2">
                 <h3 class="text-lg font-semibold mb-2">Contact</h3>
                 <a href="mailto:contact@entreprise.com" class="hover:text-blue-400 transition">table@shop.com</a>
@@ -103,16 +238,28 @@
                 <span>1 Tax Evasion Street, 45450 Malt</span>
             </div>
 
-            <!-- Section 4 : Réseaux sociaux -->
+            <!-- Social -->
             <div class="flex flex-col space-y-2">
                 <h3 class="text-lg font-semibold mb-2">Find us on</h3>
                 <div class="flex flex-row space-x-3">
+                    <!-- flex flex-row: horizontal layout -->
+                    <!-- space-x-3: spacing between icons -->
+
                     <a href="https://facebook.com" target="_blank" class="bg-blue-600 p-3 rounded-full hover:bg-blue-700 hover:scale-110 transition transform shadow-lg">
+                        <!-- bg-blue-600: blue background -->
+                        <!-- p-3: padding -->
+                        <!-- rounded-full: circular icon -->
+                        <!-- hover:bg-blue-700: darker on hover -->
+                        <!-- hover:scale-110: enlarge slightly on hover -->
+                        <!-- transition transform: smooth transform transition -->
+                        <!-- shadow-lg: large shadow -->
                         <i class="fab fa-facebook-f"></i>
                     </a>
+
                     <a href="https://x.com" target="_blank" class="bg-blue-400 p-3 rounded-full hover:bg-blue-500 hover:scale-110 transition transform shadow-lg">
                         <i class="fab fa-x"></i>
                     </a>
+
                     <a href="https://instagram.com" target="_blank" class="bg-pink-500 p-3 rounded-full hover:bg-pink-600 hover:scale-110 transition transform shadow-lg">
                         <i class="fab fa-instagram"></i>
                     </a>
@@ -121,6 +268,7 @@
         </div>
     </footer>
     <script>
+        // Function to make header transparent when scrolling
         window.addEventListener('scroll', function () {
             const header = document.getElementById('main-header');
             const navbar = document.getElementById('navbar');
@@ -139,7 +287,8 @@
                 navbar.classList.add('bg-stone-800/100');
             }
         });
-        // Off-canvas mobile menu toggle
+
+        // Toggle for mobile menu
         const menuToggle = document.getElementById('menu-toggle');
         const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -148,13 +297,28 @@
             mobileMenu.classList.remove("hidden");
             mobileMenu.classList.remove('translate-x-full');
             mobileMenu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';// Disable scrolling
+            document.body.style.height = '100vh';
         });
 
-        menuClose.addEventListener('click', () => {
+        function closeMenu() {
             mobileMenu.classList.remove('translate-x-0');
             mobileMenu.classList.add('translate-x-full');
             mobileMenu.classList.add("hidden");
+            document.body.style.overflow = ''; // Re-enable scrolling
+            document.body.style.height = '';
+        }
+
+        menuClose.addEventListener('click', closeMenu);
+
+        // Close menu if click is outside the menu
+        document.addEventListener('click', (event) => {
+            const isClickInside = mobileMenu.contains(event.target) || menuToggle.contains(event.target);
+            if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+                closeMenu();
+            }
         });
+        // list of picture for diaporama
         const images = [
             './img/alhult-transparent.png',
             './img/skogsta-transparent.png',
@@ -162,12 +326,13 @@
             './img/tarsele-transparent.png'
         ];
 
+        // Diaporama
         let current = 0;
         const imgElement = document.getElementById('carousel-image');
 
         setInterval(() => {
             current = (current + 1) % images.length;
             imgElement.src = images[current];
-        }, 1500); // change every 3 seconds
+        }, 1500);
     </script>
 </body>
