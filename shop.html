@@ -221,6 +221,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove("hidden");
             mobileMenu.classList.remove('translate-x-full');
             mobileMenu.classList.add('translate-x-0');
         });
@@ -228,6 +229,7 @@
         menuClose.addEventListener('click', () => {
             mobileMenu.classList.remove('translate-x-0');
             mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.add("hidden");
         });
         const alhultimg = document.getElementById('alhult-img');
         const stockholmimg = document.getElementById('stockholm-img');
