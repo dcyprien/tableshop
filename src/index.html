@@ -37,7 +37,7 @@
         </nav>
 
         <!-- Menu mobile (inchangé) -->
-        <div id="mobile-menu" class="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-green-600/95 backdrop-blur-sm text-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50 shadow-2xl border-l border-green-700">
+        <div id="mobile-menu" class="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-green-600/95 backdrop-blur-sm text-white transform translate-x-full transition-transform duration-300 ease-in-out hidden z-50 shadow-2xl border-l border-green-700">
             <div class="flex justify-between items-center px-4 py-4 border-b border-green-700">
                 <span class="font-bold text-lg">Menu</span>
                 <button id="menu-close" class="text-white focus:outline-none">
@@ -56,13 +56,13 @@
             </nav>
         </div>
     </header>
-<video class="h-full w-full relative z-0" src="../img/video.mp4" muted loop autoPlay></video>
+<video class="h-full w-full bg-white/30 relative z-0 py-5 px-5" src="../img/video.mp4" muted loop autoPlay></video>
     <section class="w-full h-full flex bg-white/30 justify-center py-8 px-8">
-        <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col md:flex-row items-center w-full max-w-5xl">
+        <div class="bg-stone-800/90 shadow-lg rounded-lg p-6 flex flex-col md:flex-row items-center w-full max-w-5xl">
 
             <!-- Texte et bouton -->
             <div class="w-full md:w-1/2 text-center md:text-left mb-6 md:mb-0">
-                <h2 class="text-2xl font-bold mb-4">Shop your table now</h2>
+                <h2 class="text-2xl text-white font-bold mb-4">Shop your table now</h2>
                 <a href="shop.html" class="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">
                     Browse Tables
                 </a>
@@ -71,7 +71,7 @@
             <!-- Diaporama -->
             <div class="w-full md:w-1/2">
                 <div class="flex flex-row relative overflow-hidden rounded-lg h-80 md:h-96">
-                    <img id="carousel-image" src="../img/tarsele.jpg" alt="Table preview" class="w-full h-auto transition duration-300">
+                    <img id="carousel-image" src="../img/tarsele-transparent.png" alt="Table preview" class="w-full h-auto transition duration-300">
                 </div>
             </div>
 
@@ -145,6 +145,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove("hidden");
             mobileMenu.classList.remove('translate-x-full');
             mobileMenu.classList.add('translate-x-0');
         });
@@ -152,12 +153,13 @@
         menuClose.addEventListener('click', () => {
             mobileMenu.classList.remove('translate-x-0');
             mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.add("hidden");
         });
         const images = [
-            '../img/alhult.jpg',
-            '../img/skogsta.jpg',
-            '../img/stockholm.jpg',
-            '../img/tarsele.jpg'
+            '../img/alhult-transparent.png',
+            '../img/skogsta-transparent.png',
+            '../img/stockholm-transparent.png',
+            '../img/tarsele-transparent.png'
         ];
 
         let current = 0;
